@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student | Account Registration</title>
+
+
+      <!-- Firebase cdn -->
+
+      
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBPNopUlhmlsCrj-zwjQ3HgaJjJbI-z3Ns",
+    authDomain: "eduworld-378ac.firebaseapp.com",
+    databaseURL: "https://eduworld-378ac.firebaseio.com",
+    projectId: "eduworld-378ac",
+    storageBucket: "eduworld-378ac.appspot.com",
+    messagingSenderId: "635093932267",
+    appId: "1:635093932267:web:cd2bb7c851c153566606ae"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+    
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+     
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+         <!-- <div class="navbar-header"> -->
+
+          <a class="navbar-brand" href="#">Student Registration</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+
+        </div>
+      </div>
+    </nav>
+
+    <header id="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-center"> Student <small>Signup</small></h1>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <form id="login"  class="well">
+                  <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" class="form-control" placeholder="First Name" id="f_name" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="tex" class="form-control" placeholder="Last Name" id="l_name"  required>
+                  </div>
+                  <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="text" class="form-control" placeholder="Enter Email" id="email" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" placeholder="Password" id="pwd" required>
+                  </div>
+                  <div class="form-group">
+                    <label>Conform Password</label>
+                    <input type="password" class="form-control" placeholder="Password" id="cpwd" required>
+                  </div>
+                  <button type="button" class="btn btn-default btn-block" onclick="Signup()">Signup</button>
+                  </div>
+                 <!--  <div class="form-group">
+                    <label>Address</label>
+                    <input type="tex" class="form-control" placeholder="Address" id="address"  required>
+                  </div> -->
+                  
+              </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <p>Copyright Shakeel, &copy; 2019</p>
+    </footer>
+
+
+
+
+
+
+<!-- <script type="text/javascript">
+
+  /******************Insert Data************/
+  
+    
+     function reg()
+       {
+         var userEmail     = document.getElementById('email').value;
+         var userPwd       = document.getElementById('pwd').value;
+
+         firebase.auth().createUserWithEmailAndPassword(userEmail,userPwd).catch(function (error)
+        {
+          var errorMsg = error.message;
+          alert(errorMsg);
+         });
+        alert("Successsfully Registered");
+
+    };
+  </script> -->
+<!-- <script type="text/javascript">
+    function register()
+     {
+      var databaseRef=firebase.database().ref('/Students/');
+
+      var fname   =document.getElementById('f_name').value;
+      var lname   =document.getElementById('l_name').value ;
+      var email   =document.getElementById('email').value ;
+      var pwd     =document.getElementById('pwd').value ;
+      var cpwd     =document.getElementById('cpwd').value ;
+      var cell    =document.getElementById('contact').value ;
+      var city    =document.getElementById('city').value ;
+      var address =document.getElementById('address').value;
+      var uid=firebase.database().ref().child('Students').push().key;
+
+      if (fname === "" || lname === "" || email === "" || 
+        pwd === cpwd  || cell === "" || city === "" || address === "" )
+      {
+        alert("Please Fill All Fields...");
+      }
+
+      else
+      {
+
+            var data=
+            {
+              id:uid,
+              fname:fname,
+              lname:lname,
+              email:email,
+              cell:cell,
+              city:city,
+              address:address
+            }; 
+            var send_data={};
+            send_data['/Students/' + uid]=data;
+            firebase.database().ref().update(send_data);
+
+            // alert("Data Successfully Inserted...");
+              //reload_page();
+
+               firebase.auth().createUserWithEmailAndPassword(email,pwd).catch(function (error)
+              {
+                var errorMsg = error.message;
+                alert(errorMsg);
+               }).then(() => {
+             window.location.href='std_registraion.html';
+              alert("Sorrry");
+          });
+               window.location.href='../std_login.html';
+              alert("Successsfully Registered");
+       };
+
+
+ };
+
+
+     
+ 
+  </script> -->
+
+
+
+
+
+  
+    
+  </body>
+
+  
+<!-- Firebase JS Code -->
+
+<script>
+    
+  function Signup()
+  {
+
+    var f_name = document.getElementById('f_name').value;
+    var l_name  = document.getElementById('l_name').value;
+    var email  = document.getElementById('email').value;
+    var pwd  = document.getElementById('pwd').value;
+    var cpwd  = document.getElementById('cpwd').value;
+    
+
+    if (f_name === "" || l_name === "" || email === "" || pwd === "" || cpwd === "")
+    {
+      alert("Required All Fields...!");
+    }
+    else
+    {
+      if (pwd === cpwd)
+      {
+
+        firebase.auth().createUserWithEmailAndPassword(email, pwd).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // ...
+          alert(errorMessage);
+        });
+        alert("Your Registration Successfull...");
+
+
+      }
+      else
+      {
+        alert("Password And Confirm Password Not Matched...");
+      }
+    }
+  }
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      window.location.href='home.html';
+    } 
+  });
+
+  // Show Data
+
+
+
+
+  
+
+  </script>
+
+
+</html>
+
+
+  

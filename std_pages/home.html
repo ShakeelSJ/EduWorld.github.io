@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SOSTTI</title>
+
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBPNopUlhmlsCrj-zwjQ3HgaJjJbI-z3Ns",
+    authDomain: "eduworld-378ac.firebaseapp.com",
+    databaseURL: "https://eduworld-378ac.firebaseio.com",
+    projectId: "eduworld-378ac",
+    storageBucket: "eduworld-378ac.appspot.com",
+    messagingSenderId: "635093932267",
+    appId: "1:635093932267:web:cd2bb7c851c153566606ae"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+
+  <script>
+    function Logout() {
+      firebase.auth().signOut();
+    }
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (!user) {
+        // No User is signed in.
+        window.location.href = "../index.html";
+      }
+    });
+  </script>
+    <!-- CSS Links...!-->
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/meanmenu.css"> 
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <link rel="stylesheet" href="../css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../css/font.min.css">
+    <link rel="stylesheet" href="../css/et-icone.css">
+    <link rel="stylesheet" href="../css/reseeeeeeet.css">
+    <link rel="stylesheet" href="../css/ionicons.min.css">
+    <link rel="stylesheet" href="../css/material-design-icon.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style2.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <script src="../js/modernizr-2.8.3.min.js"></script>
+
+
+    <!-- CDN icon links.. -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+
+    <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+    <!--  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+    <!-- <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style2.css" rel="stylesheet">
+    <link href="../css/owl.carousel.min.css" rel="stylesheet"> -->
+    <!-- <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>   -->
+    <!-- 
+    <script src="js/jquery"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>  
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/owl.carousel.min.js"></script> -->
+    <!-- <script src="../js/jquery-1.12.0.min.js"></script> -->
+    <!-- <script src="../js/ajax-mail.js"></script> -->
+    <!-- <script src="../js/jquery.magnific-popup.js"></script> -->
+    <!-- <script src="../js/jquery.mb.YTPlayer.js"></script> -->
+    <!-- <script src="../js/jquery.nicescroll.min.js"></script> -->
+    <!-- <script src="../js/main.js"></script> -->
+    <!-- <script src="../js/modernizer-2.8.3.min.js"></script> -->
+    <!-- <script src="../js/plugins.js"></script> -->
+    <!-- <script src="../js/plugins.js"></script> -->
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-default ">
+        <div class="container">
+            <div class="navbar-header  ">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="#">EduWorld</a>
+
+              <!-- <div class="img-logo">
+                                <a href="home.html"><img src="../img/logo1.png" alt="LOGO" style="width: 80px; height: 50px; margin-right:30px; padding-bottom: 10px;" /></a>
+                            </div>  -->
+                       <!--  <div class="col-md-3 col-sm-3 col-xs-6">
+                            <div class="logo">
+                                <a href="i.html"><img src="img/logo.png" alt="eduhome" /></a>
+                            </div>
+                        </div> -->
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="home.html">Home</a></li>
+                    <!-- <li><a href="profile.html">Profile</a></li> -->
+                    <li><a href="course.html">Courses</a></li>
+                    <li><a href="teacher.html">Teachers</a></li>
+                    <li><a href="event.html">Events</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                     <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Welcome, OES </a></li>
+                    <li><a href="index.html"  onclick="Logout()"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Logout</a>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+                 <div id="header">
+
+                 </div>
+    </nav>
+
+   
+
+    <header>
+
+
+
+        <section id="slider-container" class="slider-area">
+            <div class="slider-owl owl-theme owl-carousel">
+                <!-- Start Slingle Slide -->
+                <div class="single-slide item" style="background-image: url(../img/cr1.jpg)">
+                    <!-- Start Slider Content -->
+                    <div class="slider-content-area">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-7 col-md-offset-left-5">
+                                    <div class="slide-content-wrapper">
+                                        <div class="slide-content">
+                                            <h3>EDUCATION MAKES </h3>
+                                            <h2>PROPER HUMANITY </h2>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                                veniam,
+                                            </p>
+                                            <a class="default-btn " href="about.html">Learn more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start Slider Content -->
+                </div>
+                <!-- End Slingle Slide -->
+                <!-- Start Slingle Slide -->
+                <div class="single-slide item" style="background-image: url(../img/cr2.jpg)">
+                    <!-- Start Slider Content -->
+                    <div class="slider-content-area">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-7 col-md-offset-left-5">
+                                    <div class="slide-content-wrapper text-left">
+                                        <div class="slide-content">
+                                            <h3>EDUCATION MAKES </h3>
+                                            <h2>PROPER HUMANITY </h2>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. </p>
+                                            <a class="default-btn" href="about.html">Learn more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start Slider Content -->
+                </div>
+                <!-- End Slingle Slide -->
+                <!-- Start Slingle Slide -->
+                <div class="single-slide item" style="background-image: url(../img/cr0.jpg)">
+                    <!-- Start Slider Content -->
+                    <div class="slider-content-area">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-7 col-md-offset-left-5">
+                                    <div class="slide-content-wrapper">
+                                        <div class="slide-content">
+                                            <h3>EDUCATION MAKES </h3>
+                                            <h2>PROPER HUMANITY </h2>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. </p>
+                                            <a class="default-btn" href="about.html">Learn more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start Slider Content -->
+                </div>
+                 <div class="single-slide item" style="background-image: url(../img/cr3.jpg)">
+                    <!-- Start Slider Content -->
+                    <div class="slider-content-area">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-7 col-md-offset-left-5">
+                                    <div class="slide-content-wrapper">
+                                        <div class="slide-content">
+                                            <h3>EDUCATION MAKES </h3>
+                                            <h2>PROPER HUMANITY </h2>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. </p>
+                                            <a class="default-btn" href="about.html">Learn more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start Slider Content -->
+                </div>
+                 <div class="single-slide item" style="background-image: url(../img/cr4.jpg)">
+                    <!-- Start Slider Content -->
+                    <div class="slider-content-area">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-7 col-md-offset-left-5">
+                                    <div class="slide-content-wrapper">
+                                        <div class="slide-content">
+                                            <h3>EDUCATION MAKES </h3>
+                                            <h2>PROPER HUMANITY </h2>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. </p>
+                                            <a class="default-btn" href="about.html">Learn more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start Slider Content -->
+                </div>
+                <!-- End Slingle Slide -->
+            </div>
+        </section>
+
+    </header>
+
+
+
+
+    <section class="notice-area pt-100 pb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="notice-left">
+                        <h3>notice board</h3>
+                        <div class="single-notice-left mb-25 pb-25">
+                            <h4>5, June 2019</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                             </p> 
+                        </div>
+                        <div class="single-notice-left mb-25 pb-25">
+                            <h4>4, Aug 2019</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+                        </div>
+                        <div class="single-notice-left pb-75">
+                            <h4>3, June 2019</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+                        </div>
+                        <div class="single-notice-left mb-25 pb-25">
+                            <h4>5, June 2019</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                        </div>
+                        <div class="single-notice-left mb-25 pb-25">
+                            <h4>4, June 2019</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                        </div>
+                        <div class="single-notice-left pb-70">
+                            <h4>3, June 2019</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+                        </div>
+                        <div class="single-notice-left mb-25 pb-25">
+                            <h4>5, June 2019</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                        </div>
+                        <div class="single-notice-left mb-25 pb-25">
+                            <h4>4, June 2019</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+                        </div>
+                        <div class="single-notice-left pb-70">
+                            <h4>3, June 2019</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="notice-right">
+                        <div class="single-notice-right mb-25 pb-25">
+                            <h3>PROFESSIONAL TEACHER</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+                        </div>
+                        <div class="single-notice-right mb-25 pb-25">
+                            <h3>Online courses</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+                        </div>
+                        <div class="single-notice-right">
+                            <h3>easy to addmission</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Courses Area Start -->
+    <div class="courses-area pt-150 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="section-title">
+                        <img src="../img/.png" alt="section-title">
+                        <h2>COURSES WE OFFER</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-course">
+                        <div class="course-img">
+                            <a href="course-details.html"><img src="../img/course1.jpg" alt="course">
+                                <div class="course-hover">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-content">
+                            <h3><a href="course-details.html">WEB & MOB APP DEV</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                            <a class="default-btn" href="course-details.html">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-course">
+                        <div class="course-img">
+                            <a href="course-details.html"><img src="../img/course2.jpg" alt="course">
+                                <div class="course-hover">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-content">
+                            <h3><a href="course-details.html">DIT</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                            <a class="default-btn" href="course-details.html">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 hidden-sm col-xs-12">
+                    <div class="single-course">
+                        <div class="course-img">
+                            <a href="course-details.html"><img src="../img/course3.jpg" alt="course">
+                                <div class="course-hover">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="course-content">
+                            <h3><a href="course-details.html">CIT</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                            <a class="default-btn" href="course-details.html">read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Courses Area End -->
+
+
+
+
+    <!-- Event Area Start -->
+    <div class="event-area one text-center pt-140 pb-150">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="section-title">
+                        <img src="../img/.png" alt="section-title">
+                        <h2>UPCOMMING EVENTS</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="single-event mb-35">
+                        <div class="event-date">
+                            <h3><a href="event-details.html">20 <span>June</span></a></h3>
+                        </div>
+                        <div class="event-content text-left">
+                            <div class="event-content-left">
+                                <h4><a href="event-details.html">MICRO BIOLOGICAL WORKSHOP</a></h4>
+                                <ul>
+                                    <li><i class="fa fa-clock-o"></i>9.00 AM - 4.45 PM</li>
+                                    <li><i class="fa fa-map-marker"></i>Karachi, Pakistan</li>
+                                </ul>
+                            </div>
+                            <div class="event-content-right">
+                                <a class="default-btn" href="event-details.html">join now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-event mb-35">
+                        <div class="event-date">
+                            <h3><a href="event-details.html">18 <span>June</span></a></h3>
+                        </div>
+                        <div class="event-content text-left">
+                            <div class="event-content-left">
+                                <h4><a href="event-details.html">ADVANCE PHP WORKSHOP</a></h4>
+                                <ul>
+                                    <li><i class="fa fa-clock-o"></i>9.00 AM - 4.45 PM</li>
+                                    <li><i class="fa fa-map-marker"></i>Karachi,Pakistan</li>
+                                </ul>
+                            </div>
+                            <div class="event-content-right">
+                                <a class="default-btn" href="event-details.html">join now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-event mb-35">
+                        <div class="event-date">
+                            <h3><a href="event-details.html">16 <span>June</span></a></h3>
+                        </div>
+                        <div class="event-content text-left">
+                            <div class="event-content-left">
+                                <h4><a href="event-details.html">LEARN ENGLISH HISTORY</a></h4>
+                                <ul>
+                                    <li><i class="fa fa-clock-o"></i>9.00 AM - 4.45 PM</li>
+                                    <li><i class="fa fa-map-marker"></i>Karachi,Pakistan</li>
+                                </ul>
+                            </div>
+                            <div class="event-content-right">
+                                <a class="default-btn" href="event-details.html">join now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-event">
+                        <div class="event-date">
+                            <h3><a href="event-details.html">14 <span>June</span></a></h3>
+                        </div>
+                        <div class="event-content text-left">
+                            <div class="event-content-left">
+                                <h4><a href="event-details.html">GLOBAL ECONOMIC CONFERENCE</a></h4>
+                                <ul>
+                                    <li><i class="fa fa-clock-o"></i>9.00 AM - 4.45 PM</li>
+                                    <li><i class="fa fa-map-marker"></i>Karachi,Pakistan</li>
+                                </ul>
+                            </div>
+                            <div class="event-content-right">
+                                <a class="default-btn" href="event-details.html">join now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 hidden-sm hidden-xs">
+                    <div class="single-event mb-35">
+                        <div class="event-date">
+                            <h3><a href="event-details.html">12 <span>June</span></a></h3>
+                        </div>
+                        <div class="event-content text-left">
+                            <div class="event-content-left">
+                                <h4><a href="event-details.html">MATHEMATICAL WORKSHOP</a></h4>
+                                <ul>
+                                    <li><i class="fa fa-clock-o"></i>9.00 AM - 4.45 PM</li>
+                                    <li><i class="fa fa-map-marker"></i>Karachi</li>
+                                </ul>
+                            </div>
+                            <div class="event-content-right">
+                                <a class="default-btn" href="event-details.html">join now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-event mb-35">
+                        <div class="event-date">
+                            <h3><a href="event-details.html">10 <span>June</span></a></h3>
+                        </div>
+                        <div class="event-content text-left">
+                            <div class="event-content-left">
+                                <h4><a href="event-details.html">WORDPRESS AUTHOR MEET UP</a></h4>
+                                <ul>
+                                    <li><i class="fa fa-clock-o"></i>9.00 AM - 4.45 PM</li>
+                                    <li><i class="fa fa-map-marker"></i>Karachi,Paistan</li>
+                                </ul>
+                            </div>
+                            <div class="event-content-right">
+                                <a class="default-btn" href="event-details.html">join now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-event mb-35">
+                        <div class="event-date">
+                            <h3><a href="event-details.html">08 <span>June</span></a></h3>
+                        </div>
+                        <div class="event-content text-left">
+                            <div class="event-content-left">
+                                <h4><a href="event-details.html">DIGITAL MARKETING ANALYSIS</a></h4>
+                                <ul>
+                                    <li><i class="fa fa-clock-o"></i>9.00 AM - 4.45 PM</li>
+                                    <li><i class="fa fa-map-marker"></i>Karachi,Pakistan</li>
+                                </ul>
+                            </div>
+                            <div class="event-content-right">
+                                <a class="default-btn" href="event-details.html">join now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-event">
+                        <div class="event-date">
+                            <h3><a href="event-details.html">06 <span>June</span></a></h3>
+                        </div>
+                        <div class="event-content text-left">
+                            <div class="event-content-left">
+                                <h4><a href="event-details.html">WROKSHOP ON UI &amp; UX</a></h4>
+                                <ul>
+                                    <li><i class="fa fa-clock-o"></i>9.00 AM - 4.45 PM</li>
+                                    <li><i class="fa fa-map-marker"></i>Karachi,Pakistan</li>
+                                </ul>
+                            </div>
+                            <div class="event-content-right">
+                                <a class="default-btn" href="event-details.html">join now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Event Area End -->
+
+
+
+
+
+
+    <!--  <section id="breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="active">WEBSITE OVERVIEW
+
+
+
+
+          </li>
+        </ol>
+      </div>
+    </section>
+ -->
+    <!--  <section id="main">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="list-group">
+              <a href="index.html" class="list-group-item active main-color-bg">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span> EDIT
+              </a>
+              <a href="pages.html" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Courses <span class="badge">12</span></a>
+              <a href="posts.html" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Questions <span class="badge">33</span></a>
+              <a href="users.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users <span class="badge">203</span></a>
+            </div>
+ -->
+    <!--    <div class=""> -->
+    <!-- <h4>Disk Space Used</h4> -->
+    <!--  <div class="">
+                  <div  class=""  style="width: 60%;">  -->
+    <!--    60% -->
+    <!--   </div>
+            </div> -->
+    <!--  <h4>Bandwidth Used </h4> -->
+    <!--  <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;"> -->
+    <!-- 40%
+            </div> -->
+    <!--  <div class="">
+                <div class=""  style="width: 40%;"> -->
+    <!-- 40% -->
+    <!--  </div>
+          </div>
+            </div>
+          </div>
+          <div class="col-md-9"> -->
+    <!-- Website Overview -->
+    <!--  <div class="panel panel-default">
+              <div class="panel-heading main-color-bg">
+                <h3 class="panel-title">Website Overview</h3>
+              </div>
+              <div class="panel-body">
+                <div class="col-md-6">
+                  <div class="well dash-box">
+                    <h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 203</h2>
+                    <h4>Total Users</h4>
+                  </div>
+                </div> -->
+    <!-- <div class="col-md-3">
+                  <div class="well dash-box">
+                    <h2><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> 12</h2>
+                    <h4>Pages</h4>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="well dash-box">
+                    <h2><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> 33</h2>
+                    <h4>Posts</h4>
+                  </div>
+                </div> -->
+    <!-- <div class="col-md-6">
+                  <div class="well dash-box">
+                    <h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> 12,334</h2>
+                    <h4>Total Visitors</h4>
+                  </div>
+                </div>
+              </div>
+              </div>
+ -->
+    <!-- Latest Users -->
+    <!--  <div class="panel panel-default">
+                <div class="panel-heading">
+                  <div class="panel-heading main-color-bg">
+                  <h3 class="panel-title">Latest Users</h3>
+                  </div>
+                </div>
+                <div class="panel-body">
+                  <table class="table table-striped table-hover">
+                      <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Joined</th>
+                      </tr>
+                      <tr>
+                        <td>Jill Smith</td>
+                        <td>jillsmith@gmail.com</td>
+                        <td>Dec 12, 2016</td>
+                      </tr>
+                      <tr>
+                        <td>Eve Jackson</td>
+                        <td>ejackson@yahoo.com</td>
+                        <td>Dec 13, 2016</td>
+                      </tr>
+                      <tr>
+                        <td>John Doe</td>
+                        <td>jdoe@gmail.com</td>
+                        <td>Dec 13, 2016</td>
+                      </tr>
+                      <tr>
+                        <td>Stephanie Landon</td>
+                        <td>landon@yahoo.com</td>
+                        <td>Dec 14, 2016</td>
+                      </tr>
+                      <tr>
+                        <td>Mike Johnson</td>
+                        <td>mjohnson@gmail.com</td>
+                        <td>Dec 15, 2016</td>
+                      </tr>
+                    </table>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Footer Start -->
+    <footer class="footer-area">
+        <div class="main-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="single-widget pr-60">
+                            <div class="footer-logo pb-25">
+                                <a href="index.html"><img src="../img/.png" alt="LOGO"></a>
+                            </div>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                            <div class="footer-social">
+                                <ul>
+                                    <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                                    <li><a href="#"><i class="zmdi zmdi-pinterest"></i></a></li>
+                                    <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
+                                    <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="single-widget">
+                            <h3>information</h3>
+                            <ul>
+                                <li><a href="#">addmission</a></li>
+                                <li><a href="#">Academic Calender</a></li>
+                                <li><a href="event.html">Event List</a></li>
+                                <li><a href="#">Hostel &amp; Dinning</a></li>
+                                <li><a href="#">TimeTable</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-xs-12">
+                        <div class="single-widget">
+                            <h3>useful links</h3>
+                            <ul>
+                                <li><a href="course.html">our courses</a></li>
+                                <li><a href="about.html">about us</a></li>
+                                <li><a href="teacher.html">teachers &amp; faculty</a></li>
+                                <li><a href="#">teams &amp; conditions</a></li>
+                                <li><a href="event.html">our events</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="single-widget">
+                            <h3>get in touch</h3>
+                            <p>Your address goes here, Street<br>City, Karachi</p>
+                            <p>+923000368684<br>+923000368684</p>
+                            <p>edu@sostti.com<br>www.SOSTTI.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p>Copyright © <a href="#" target="_blank">Shakeel</a> 2019. All Right Reserved By SOSTTI.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="../js/jquery-1.12.0.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/jquery.meanmenu.js"></script> 
+    <script src="../js/jquery.magnific-popup.js"></script>
+    <script src="../js/ajax-mail.js"></script>
+    <script src="../js/owl.carousel.min.js"></script>
+    <script src="../js/jquery.mb.YTPlayer.js"></script>
+    <script src="../js/jquery.nicescroll.min.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/modernizer-2.8.3.min.js"></script>
+
+</body>
+
+
+
+
+
+
+
+
+</html>

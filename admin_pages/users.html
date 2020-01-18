@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Panel | Users</title>
+
+
+      <!-- Firebase cdn -->
+
+      
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-auth.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyB845PPKMPPk837H92aTdUPEOOU6lMFKVo",
+    authDomain: "edupro-d76c9.firebaseapp.com",
+    databaseURL: "https://edupro-d76c9.firebaseio.com",
+    projectId: "edupro-d76c9",
+    storageBucket: "edupro-d76c9.appspot.com",
+    messagingSenderId: "1038653320947",
+    appId: "1:1038653320947:web:5f3a3b237a19544f861186"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  console.log(firebaseConfig)
+</script>
+
+
+
+  
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+ <!--    <script src="http://cdn.ckeditor.com/4.6.1/standard/ckeditor.js"></script>  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+    <script src="../js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Admin Panel</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="question.html">Questions</a></li>
+            <li class="active"><a href="users.html">Users</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Welcome, OES</a></li>
+            <li><a href="login.html"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Logout</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <header id="header">
+      <div class="container">
+      
+      </div>
+    </header>
+
+    <section id="breadcrumb">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li><a href="home.html" >Admin Panel</a></li>
+          <li class="active">Users</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="main">
+      <div class="container">
+       
+          <div class="col-md-12">
+            <!-- Website Overview -->
+            <div class="panel panel-default">
+              <div class="panel-heading main-color-bg">
+                <h3 class="panel-title">List Of Registered Students...</h3>
+              </div>
+              <div class="panel-body">
+                <div class="row">
+                      <div class="col-md-12">
+                          <input class="form-control" type="text" id="myInput" placeholder="Search Users...">
+                      </div>
+                </div>
+                <br>
+                <table class="table table-striped table-hover" id="Show_Data">
+                      <tr>
+                        <th>Roll No</th>
+                        <th>User Name</th>
+                        <th>User Email Address</th>
+                        <th>Home Address</th>
+                        <th></th>
+                      </tr>
+
+                    <!--    <tbody id="myTable">
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td> <a  href="#" class="btn btn-danger btn-block"> Add New Users</a></td>
+                      <tr>
+                        <td>Jill Smith</td>
+                        <td>jillsmith@gmail.com</td>
+                        <td>Shah latif town,Karachi</td>
+                        <td><a class="btn btn-default" href="edit.html">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
+                      </tr>
+                      <tr>
+                        <td>Eve Jackson</td>
+                        <td>ejackson@yahoo.com</td>
+                        <td>Shah latif town,Karachi</td>
+                        <td><a class="btn btn-default" href="edit.html">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
+                      </tr>
+                      <tr>
+                        <td>Eve Jackson</td>
+                        <td>ejackson@yahoo.com</td>
+                        <td>Shah latif town,Karachi</td>
+                        <td><a class="btn btn-default" href="edit.html">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
+                      </tr>
+                      <tr>
+                        <td>Eve Jackson</td>
+                        <td>ejackson@yahoo.com</td>
+                        <td>Shah latif town,Karachi</td>
+                        <td><a class="btn btn-default" href="edit.html">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
+                      </tr>
+                      <tr>
+                        <td>Eve Jackson</td>
+                        <td>ejackson@yahoo.com</td>
+                        <td>Shah latif town,Karachi</td>
+                        <td><a class="btn btn-default" href="edit.html">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
+                      </tr>
+                      <tr>
+                       <td>Stephanie Landon</td>
+                        <td>landon@yahoo.com</td>
+                        <td>Shah latif town,Karachi</td>
+                        <td><a class="btn btn-default" href="edit.html">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
+                      </tr>
+                      <tr>
+                        <td>Mike Johnson</td>
+                        <td>mjohnson@gmail.com</td>
+                        <td>Shah latif town,Karachi</td>
+                        <td><a class="btn btn-default" href="edit.html">Edit</a> <a class="btn btn-danger" href="#">Delete</a></td>
+                      </tr>
+                    </tbody> -->
+
+                    </table>
+              </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <p>Copyright Shakeel, &copy; 2019</p>
+    </footer>
+
+    <!-- Javascript Code -->
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+  </body>
+
+
+<!-- Firebase Code -->
+
+<!-- <script>
+var databaseRef = firebase.database().ref('/Students/');
+  databaseRef.on('value',getData);
+
+  function getData(data)
+  {
+    var Datas   = data.val();
+    var key   = Object.keys(Datas);
+
+    for(var i = 0; i < key.length; i++){
+
+      var singlekey   = key[i];
+      var f_name    = Datas[singlekey].f_name;
+      var l_name    = Datas[singlekey].l_name;
+      var email     = Datas[singlekey].email;      
+      var address    = Datas[singlekey].address;       
+
+      var table     = document.getElementById('Show_Data');
+
+      var row     = table.insertRow();
+      var cel1    = row.insertCell();
+      var cel2    = row.insertCell();
+      var cel3    = row.insertCell();
+      var cel4    = row.insertCell();
+      var cel5    = row.insertCell();
+      // var cel6    = row.insertCell();
+   
+
+      cel1.innerHTML  = i+1;
+      cel2.innerHTML  = f_name;
+      cel3.innerHTML  = l_name;
+      cel4.innerHTML  = email;
+      cel5.innerHTML  = address;
+    
+      cel6.innerHTML  = "<span class='glyphicon glyphicon-pencil btn-success' id='"+singlekey+"' onclick='edit(this.id)' data-toggle='modal' data-target='#popUpWindow'></span>" 
+              + "<span class='glyphicon glyphicon-trash btn-danger' id='"+singlekey+"' onclick='remove(this.id)'></span>"; 
+      ;
+    }
+
+  }
+
+
+  
+</script> -->
+
+
+
+
+<script>
+
+
+  var databaseRef = firebase.database().ref('/Students/');
+  databaseRef.on('value',getData);
+
+  function getData(data)
+  {
+    var Datas   = data.val();
+    var key   = Object.keys(Datas);
+
+    for(var i = 0; i < key.length; i++){
+
+      var singlekey   = key[i];
+      var name    = Datas[singlekey].std_name;
+      var fname     = Datas[singlekey].f_name;
+      var age     = Datas[singlekey].std_age;      
+      var gender    = Datas[singlekey].gender;       
+      var course    = Datas[singlekey].course;       
+      var date    = Datas[singlekey].adm_date;
+
+      var table     = document.getElementById('Show_Data');
+
+      var row     = table.insertRow();
+      var cel1    = row.insertCell();
+      var cel2    = row.insertCell();
+      var cel3    = row.insertCell();
+      var cel4    = row.insertCell();
+      var cel5    = row.insertCell();
+      var cel6    = row.insertCell();
+      var cel7    = row.insertCell();
+      var cel8    = row.insertCell();
+
+      cel1.innerHTML  = i+1;
+      cel2.innerHTML  = name;
+      cel3.innerHTML  = fname;
+      cel4.innerHTML  = age;
+      cel5.innerHTML  = gender;
+      cel6.innerHTML  = course;
+      cel7.innerHTML  = date;
+      cel8.innerHTML  = "<span class='glyphicon glyphicon-pencil btn-success' id='"+singlekey+"' onclick='edit(this.id)' data-toggle='modal' data-target='#popUpWindow'></span>" 
+              + "<span class='glyphicon glyphicon-trash btn-danger' id='"+singlekey+"' onclick='remove(this.id)'></span>"; 
+      ;
+    }
+
+  }
+
+  function edit(editid)
+  {
+    databaseRef.on('value',updateData);
+    function updateData(data) {
+      
+      var Datas = data.val();   
+      var user_id = editid;
+      document.getElementById('user_id').innerHTML = user_id;
+      document.getElementById('std_name').value   = Datas[user_id].std_name;
+      document.getElementById('f_name').value   = Datas[user_id].f_name;
+      document.getElementById('age').value    = Datas[user_id].std_age;
+      document.getElementById('gender').value   = Datas[user_id].gender;
+      document.getElementById('course').value   = Datas[user_id].course;
+      document.getElementById('date').value     = Datas[user_id].adm_date;
+
+    }
+  }
+  function updateUser()
+  {
+    var user_id   = document.getElementById('user_id').innerHTML;
+    var std_name  = document.getElementById('std_name').value;
+    var f_name    = document.getElementById('f_name').value;
+    var std_age   = document.getElementById('age').value;
+    var gender    = document.getElementById('gender').value;
+    var course    = document.getElementById('course').value;
+    var adm_date  = document.getElementById('date').value;
+
+    if (std_name === "" || f_name === "" || std_age === "" || 
+      gender === "" || course === "" || adm_date === "")
+    {
+      alert("Please Compleate All Fields...");
+    }
+    else
+    {
+      firebase.database().ref().child('/Students/' + user_id)
+      .update({
+        user_id   : user_id,
+        std_name  : std_name,
+        f_name    : f_name,
+        std_age   : std_age,
+        gender    : gender,
+        course    : course,
+        adm_date  : adm_date
+      });
+
+      alert("Data Successfully Updated...");
+      window.location.href = 'details.html';
+    }
+
+  }
+  function remove(removeid)
+  {
+      var user_id   = removeid;
+      firebase.database().ref().child('/Students/' + user_id).remove();
+      alert("Data Successfully Deleted...");
+      window.location.href="details.html";
+
+  }
+
+</script>
+</html>
